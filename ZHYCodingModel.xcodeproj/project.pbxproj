@@ -1,0 +1,327 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F9445B071E1364D300F220B7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F9445B061E1364D300F220B7 /* AppDelegate.m */; };
+		F9445B0A1E1364D300F220B7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F9445B091E1364D300F220B7 /* main.m */; };
+		F9445B0C1E1364D300F220B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9445B0B1E1364D300F220B7 /* Assets.xcassets */; };
+		F9445B0F1E1364D300F220B7 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9445B0D1E1364D300F220B7 /* MainMenu.xib */; };
+		F9445B2D1E13654300F220B7 /* ZHYCodingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F9445B2C1E13654300F220B7 /* ZHYCodingModel.m */; };
+		F99380EE1E14A86C0070FF6B /* TestClass.m in Sources */ = {isa = PBXBuildFile; fileRef = F99380ED1E14A86C0070FF6B /* TestClass.m */; };
+		F99381051E14E9520070FF6B /* TestSubClass.m in Sources */ = {isa = PBXBuildFile; fileRef = F99381041E14E9520070FF6B /* TestSubClass.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F9445B021E1364D300F220B7 /* ZHYCodingModel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZHYCodingModel.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F9445B051E1364D300F220B7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		F9445B061E1364D300F220B7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F9445B091E1364D300F220B7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F9445B0B1E1364D300F220B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F9445B0E1E1364D300F220B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		F9445B101E1364D300F220B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F9445B2B1E13654300F220B7 /* ZHYCodingModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHYCodingModel.h; sourceTree = "<group>"; };
+		F9445B2C1E13654300F220B7 /* ZHYCodingModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHYCodingModel.m; sourceTree = "<group>"; };
+		F99380EC1E14A86C0070FF6B /* TestClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestClass.h; sourceTree = "<group>"; };
+		F99380ED1E14A86C0070FF6B /* TestClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestClass.m; sourceTree = "<group>"; };
+		F99381031E14E9520070FF6B /* TestSubClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestSubClass.h; sourceTree = "<group>"; };
+		F99381041E14E9520070FF6B /* TestSubClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestSubClass.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F9445AFF1E1364D300F220B7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F9445AF91E1364D300F220B7 = {
+			isa = PBXGroup;
+			children = (
+				F9445B041E1364D300F220B7 /* ZHYCodingModel */,
+				F9445B031E1364D300F220B7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F9445B031E1364D300F220B7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F9445B021E1364D300F220B7 /* ZHYCodingModel.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F9445B041E1364D300F220B7 /* ZHYCodingModel */ = {
+			isa = PBXGroup;
+			children = (
+				F99380EC1E14A86C0070FF6B /* TestClass.h */,
+				F99380ED1E14A86C0070FF6B /* TestClass.m */,
+				F99381031E14E9520070FF6B /* TestSubClass.h */,
+				F99381041E14E9520070FF6B /* TestSubClass.m */,
+				F9445B161E1364EB00F220B7 /* CodingModel */,
+				F9445B051E1364D300F220B7 /* AppDelegate.h */,
+				F9445B061E1364D300F220B7 /* AppDelegate.m */,
+				F9445B0B1E1364D300F220B7 /* Assets.xcassets */,
+				F9445B0D1E1364D300F220B7 /* MainMenu.xib */,
+				F9445B101E1364D300F220B7 /* Info.plist */,
+				F9445B081E1364D300F220B7 /* Supporting Files */,
+			);
+			path = ZHYCodingModel;
+			sourceTree = "<group>";
+		};
+		F9445B081E1364D300F220B7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F9445B091E1364D300F220B7 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F9445B161E1364EB00F220B7 /* CodingModel */ = {
+			isa = PBXGroup;
+			children = (
+				F9445B2B1E13654300F220B7 /* ZHYCodingModel.h */,
+				F9445B2C1E13654300F220B7 /* ZHYCodingModel.m */,
+			);
+			name = CodingModel;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F9445B011E1364D300F220B7 /* ZHYCodingModel */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F9445B131E1364D300F220B7 /* Build configuration list for PBXNativeTarget "ZHYCodingModel" */;
+			buildPhases = (
+				F9445AFE1E1364D300F220B7 /* Sources */,
+				F9445AFF1E1364D300F220B7 /* Frameworks */,
+				F9445B001E1364D300F220B7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ZHYCodingModel;
+			productName = ZHYCodingModel;
+			productReference = F9445B021E1364D300F220B7 /* ZHYCodingModel.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F9445AFA1E1364D300F220B7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "John Henry";
+				TargetAttributes = {
+					F9445B011E1364D300F220B7 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 24QJT553GT;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = F9445AFD1E1364D300F220B7 /* Build configuration list for PBXProject "ZHYCodingModel" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F9445AF91E1364D300F220B7;
+			productRefGroup = F9445B031E1364D300F220B7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F9445B011E1364D300F220B7 /* ZHYCodingModel */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F9445B001E1364D300F220B7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F9445B0C1E1364D300F220B7 /* Assets.xcassets in Resources */,
+				F9445B0F1E1364D300F220B7 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F9445AFE1E1364D300F220B7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F99380EE1E14A86C0070FF6B /* TestClass.m in Sources */,
+				F9445B0A1E1364D300F220B7 /* main.m in Sources */,
+				F9445B071E1364D300F220B7 /* AppDelegate.m in Sources */,
+				F9445B2D1E13654300F220B7 /* ZHYCodingModel.m in Sources */,
+				F99381051E14E9520070FF6B /* TestSubClass.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F9445B0D1E1364D300F220B7 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F9445B0E1E1364D300F220B7 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F9445B111E1364D300F220B7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		F9445B121E1364D300F220B7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		F9445B141E1364D300F220B7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 24QJT553GT;
+				INFOPLIST_FILE = ZHYCodingModel/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Futu.ZHYCodingModel;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F9445B151E1364D300F220B7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 24QJT553GT;
+				INFOPLIST_FILE = ZHYCodingModel/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Futu.ZHYCodingModel;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F9445AFD1E1364D300F220B7 /* Build configuration list for PBXProject "ZHYCodingModel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F9445B111E1364D300F220B7 /* Debug */,
+				F9445B121E1364D300F220B7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F9445B131E1364D300F220B7 /* Build configuration list for PBXNativeTarget "ZHYCodingModel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F9445B141E1364D300F220B7 /* Debug */,
+				F9445B151E1364D300F220B7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F9445AFA1E1364D300F220B7 /* Project object */;
+}
