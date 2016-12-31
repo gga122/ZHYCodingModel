@@ -1,6 +1,6 @@
 //
-//  ZHYCodingModelTestCase.m
-//  ZHYCodingModel
+//  ZHYCodingModelTests.m
+//  ZHYCodingModelTests
 //
 //  Created by Henry on 2016/12/31.
 //  Copyright © 2016年 John Henry. All rights reserved.
@@ -8,11 +8,11 @@
 
 #import <XCTest/XCTest.h>
 
-@interface ZHYCodingModelTestCase : XCTestCase
+@interface ZHYCodingModelTests : XCTestCase
 
 @end
 
-@implementation ZHYCodingModelTestCase
+@implementation ZHYCodingModelTests
 
 - (void)setUp {
     [super setUp];

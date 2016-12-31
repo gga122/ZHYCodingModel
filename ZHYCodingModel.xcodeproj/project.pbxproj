@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BAF3E1001E17F5D900B39E5D /* ZHYCodingModelTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = BAF3E0FF1E17F5D900B39E5D /* ZHYCodingModelTestCase.m */; };
+		BAF3E1091E17F6EF00B39E5D /* ZHYCodingModelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BAF3E1081E17F6EF00B39E5D /* ZHYCodingModelTests.m */; };
 		F9445B071E1364D300F220B7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F9445B061E1364D300F220B7 /* AppDelegate.m */; };
 		F9445B0A1E1364D300F220B7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F9445B091E1364D300F220B7 /* main.m */; };
 		F9445B0C1E1364D300F220B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9445B0B1E1364D300F220B7 /* Assets.xcassets */; };
@@ -17,8 +17,20 @@
 		F99381051E14E9520070FF6B /* TestSubClass.m in Sources */ = {isa = PBXBuildFile; fileRef = F99381041E14E9520070FF6B /* TestSubClass.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		BAF3E10B1E17F6EF00B39E5D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F9445AFA1E1364D300F220B7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F9445B011E1364D300F220B7;
+			remoteInfo = ZHYCodingModel;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
-		BAF3E0FF1E17F5D900B39E5D /* ZHYCodingModelTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHYCodingModelTestCase.m; sourceTree = "<group>"; };
+		BAF3E1061E17F6EF00B39E5D /* ZHYCodingModelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZHYCodingModelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BAF3E1081E17F6EF00B39E5D /* ZHYCodingModelTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZHYCodingModelTests.m; sourceTree = "<group>"; };
+		BAF3E10A1E17F6EF00B39E5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F9445B021E1364D300F220B7 /* ZHYCodingModel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZHYCodingModel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9445B051E1364D300F220B7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F9445B061E1364D300F220B7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -35,6 +47,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		BAF3E1031E17F6EF00B39E5D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F9445AFF1E1364D300F220B7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -45,19 +64,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		BAF3E1011E17F5F500B39E5D /* UnitTest */ = {
+		BAF3E1071E17F6EF00B39E5D /* ZHYCodingModelTests */ = {
 			isa = PBXGroup;
 			children = (
-				BAF3E0FF1E17F5D900B39E5D /* ZHYCodingModelTestCase.m */,
+				BAF3E1081E17F6EF00B39E5D /* ZHYCodingModelTests.m */,
+				BAF3E10A1E17F6EF00B39E5D /* Info.plist */,
 			);
-			name = UnitTest;
+			path = ZHYCodingModelTests;
 			sourceTree = "<group>";
 		};
 		F9445AF91E1364D300F220B7 = {
 			isa = PBXGroup;
 			children = (
-				BAF3E1011E17F5F500B39E5D /* UnitTest */,
 				F9445B041E1364D300F220B7 /* ZHYCodingModel */,
+				BAF3E1071E17F6EF00B39E5D /* ZHYCodingModelTests */,
 				F9445B031E1364D300F220B7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -66,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				F9445B021E1364D300F220B7 /* ZHYCodingModel.app */,
+				BAF3E1061E17F6EF00B39E5D /* ZHYCodingModelTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -108,6 +129,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		BAF3E1051E17F6EF00B39E5D /* ZHYCodingModelTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BAF3E10D1E17F6EF00B39E5D /* Build configuration list for PBXNativeTarget "ZHYCodingModelTests" */;
+			buildPhases = (
+				BAF3E1021E17F6EF00B39E5D /* Sources */,
+				BAF3E1031E17F6EF00B39E5D /* Frameworks */,
+				BAF3E1041E17F6EF00B39E5D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BAF3E10C1E17F6EF00B39E5D /* PBXTargetDependency */,
+			);
+			name = ZHYCodingModelTests;
+			productName = ZHYCodingModelTests;
+			productReference = BAF3E1061E17F6EF00B39E5D /* ZHYCodingModelTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		F9445B011E1364D300F220B7 /* ZHYCodingModel */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F9445B131E1364D300F220B7 /* Build configuration list for PBXNativeTarget "ZHYCodingModel" */;
@@ -134,6 +173,11 @@
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "John Henry";
 				TargetAttributes = {
+					BAF3E1051E17F6EF00B39E5D = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = F9445B011E1364D300F220B7;
+					};
 					F9445B011E1364D300F220B7 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 24QJT553GT;
@@ -155,11 +199,19 @@
 			projectRoot = "";
 			targets = (
 				F9445B011E1364D300F220B7 /* ZHYCodingModel */,
+				BAF3E1051E17F6EF00B39E5D /* ZHYCodingModelTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		BAF3E1041E17F6EF00B39E5D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F9445B001E1364D300F220B7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -172,6 +224,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		BAF3E1021E17F6EF00B39E5D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BAF3E1091E17F6EF00B39E5D /* ZHYCodingModelTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F9445AFE1E1364D300F220B7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -179,13 +239,20 @@
 				F99380EE1E14A86C0070FF6B /* TestClass.m in Sources */,
 				F9445B0A1E1364D300F220B7 /* main.m in Sources */,
 				F9445B071E1364D300F220B7 /* AppDelegate.m in Sources */,
-				BAF3E1001E17F5D900B39E5D /* ZHYCodingModelTestCase.m in Sources */,
 				F9445B2D1E13654300F220B7 /* ZHYCodingModel.m in Sources */,
 				F99381051E14E9520070FF6B /* TestSubClass.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BAF3E10C1E17F6EF00B39E5D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F9445B011E1364D300F220B7 /* ZHYCodingModel */;
+			targetProxy = BAF3E10B1E17F6EF00B39E5D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		F9445B0D1E1364D300F220B7 /* MainMenu.xib */ = {
@@ -199,6 +266,34 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		BAF3E10E1E17F6EF00B39E5D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = ZHYCodingModelTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ZHY.ZHYCodingModelTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZHYCodingModel.app/Contents/MacOS/ZHYCodingModel";
+			};
+			name = Debug;
+		};
+		BAF3E10F1E17F6EF00B39E5D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = ZHYCodingModelTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ZHY.ZHYCodingModelTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZHYCodingModel.app/Contents/MacOS/ZHYCodingModel";
+			};
+			name = Release;
+		};
 		F9445B111E1364D300F220B7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -315,6 +410,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		BAF3E10D1E17F6EF00B39E5D /* Build configuration list for PBXNativeTarget "ZHYCodingModelTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BAF3E10E1E17F6EF00B39E5D /* Debug */,
+				BAF3E10F1E17F6EF00B39E5D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		F9445AFD1E1364D300F220B7 /* Build configuration list for PBXProject "ZHYCodingModel" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
