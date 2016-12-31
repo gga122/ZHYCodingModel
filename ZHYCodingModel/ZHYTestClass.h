@@ -8,6 +8,10 @@
 
 #import "ZHYCodingModel.h"
 
+/**
+ *  This class is designed to test Objective-C objects coding.
+ */
+
 @interface ZHYTestClass : ZHYCodingModel
 
 @property (nonatomic, copy) NSString *stringValue;
