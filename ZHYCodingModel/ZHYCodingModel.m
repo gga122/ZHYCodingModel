@@ -98,7 +98,7 @@ if (!object) {\
 }\
 
 - (void)encodeWithCoder:(NSCoder *)aCoder {
-    Class<ZHYCodingClassProtocol> cls = [self class];
+    Class<ZHYCodingProtocol> cls = [self class];
 
     while (!reachRootClass(cls)) {        // recursion ivar to root class
         NSString *clsName = NSStringFromClass(cls);
@@ -155,7 +155,7 @@ if (!object) {\
 #pragma mark - Public Methods
 
 - (void)coderWillDecode:(NSCoder *)aDecoder {
-    Class<ZHYCodingClassProtocol> cls = [self class];
+    Class<ZHYCodingProtocol> cls = [self class];
 
     while (!reachRootClass(cls)) {        // recursion ivar to root class
         NSString *clsName = NSStringFromClass(cls);

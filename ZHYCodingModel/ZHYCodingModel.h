@@ -25,7 +25,7 @@
 /**
  *  Define behavior for coding class.
  */
-@protocol ZHYCodingClassProtocol <NSObject>
+@protocol ZHYCodingProtocol <NSObject>
 
 @optional
 
@@ -40,7 +40,7 @@
 @end
 
 
-@interface ZHYCodingModel : NSObject <NSCoding, ZHYCodingClassProtocol>
+@interface ZHYCodingModel : NSObject <NSCoding, ZHYCodingProtocol>
 
 /**
  *  Mark the keys that you dont want to encode/decode. Key is your instance variable name in class. Like NSString *_string, key is '_string'.
