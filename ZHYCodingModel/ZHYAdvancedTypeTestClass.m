@@ -64,7 +64,7 @@
         return NO;
     }
     
-    return YES;
+    return [super isEqual:object];
 }
 
 @end
