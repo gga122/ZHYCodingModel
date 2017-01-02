@@ -97,9 +97,44 @@ if (!object) {\
     continue;\
 }\
 
+/**
+ *
+ *  Watch out!
+ *
+ *  To solve duplicate var name in sub class. I use the C-style operation.
+ *  I assume you know Objective-C object ivar layout.
+ *  
+ *  Here is a sample to tell you Objective-C object ivar layout.
+ *
+ *  Assume I have a class called 'Class A' with 2 ivar, ivar a and ivar b.
+ *  'Class B' is subclass of 'Class A' with 2 ivar, ivar c and ivar d.
+ *  'Class C' is subclass of 'Class B' with 2 ivar, ivar e and ivar f.
+ *
+ *  
+ *  Objective-C layout ivars from superclass to subclass.
+ *  So, ivar layout order is   'isa' / Class A ivars / Class B ivars / Class C ivars
+ *  Class C object ivar layout is    'isa' / Class A (ivar a, ivar b) / Class B (ivar c, ivar d) / Class C (ivar e, ivar f)
+ *
+ *  So, Here is the steps for 'Encoding'.
+ *  
+ *  1. obtain 'self' to a pointer(base pointer).
+ *  2. traverse inherit chain from subclass to superclass.
+ *  3. traverse ivars in each class.
+ *  4. get ivar name and filter out if caller wanna skip it.
+ *  5. get ivar encoding type and filter out if disallowed types.
+ *  6. get ivar offset and add it to base pointer for getting ivar value.
+ *  7. if ivar is C base type or CGRect/CGPoint etc., transform it.
+ *  8. if ivar conforms to 'NSCoding' protocol, tell caller will encode ivar.
+ *
+ *  PS1. I use class name as prefix to solve duplicate name problem.
+ *  PS2. To recognize replaced ivar, I add a unique prefix before original encode key.
+ */
+
 - (void)encodeWithCoder:(NSCoder *)aCoder {
     Class<ZHYCodingProtocol> cls = [self class];
 
+    void *ptrBase = (__bridge void *)self;
+    
     while (!reachRootClass(cls)) {        // recursion ivar to root class
         NSString *clsName = NSStringFromClass(cls);
 
@@ -115,6 +150,10 @@ if (!object) {\
             HAS_SKIP_CHECK(varName);
             ENCODE_TYPE_CHECK(ivar, varName);
 
+            ptrdiff_t offset = ivar_getOffset(ivar);
+            void *ptrVar = ptrBase + offset;
+            
+            
             id var = [self valueForKey:varName];
             ENCODE_NIL_CHECK(var, cls);
 
@@ -122,7 +161,7 @@ if (!object) {\
             ENCODE_NIL_CHECK(replaceVar, cls);
 
             if ([replaceVar conformsToProtocol:@protocol(NSCoding)]) {
-                /* Use class name as prefix to avoid superclass' key over subclass' key */
+                /* use class name as prefix to avoid superclass' key over subclass' key */
                 NSString *encodeKey = [NSString stringWithFormat:@"%@_%@", clsName, varName];
                 BOOL didReplace = (var != replaceVar);
                 if (didReplace) {
