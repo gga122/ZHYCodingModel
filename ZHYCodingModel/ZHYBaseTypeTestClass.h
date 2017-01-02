@@ -21,6 +21,7 @@
  *  7. char 
  *  8. bool
  *  9. BOOL
+ *
  */
 
 @interface ZHYBaseTypeTestClass : ZHYTestClass
