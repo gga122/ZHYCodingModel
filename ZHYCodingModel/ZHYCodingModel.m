@@ -62,6 +62,37 @@ NS_INLINE BOOL isAllowedEncodingIvar(Ivar ivar) {
     }
 }
 
+NS_INLINE BOOL supportNumberWrapper(Ivar ivar) {
+    if (!ivar) {
+        return NO;
+    }
+    
+    const char *encodingType = ivar_getTypeEncoding(ivar);
+    const char typeFlag = encodingType[0];
+    
+    switch (typeFlag) {
+        case _C_SHT:
+        case _C_USHT:
+        case _C_INT:
+        case _C_UINT:
+        case _C_LNG:
+        case _C_ULNG:
+        case _C_LNG_LNG:
+        case _C_ULNG_LNG:
+        case _C_FLT:
+        case _C_DBL:
+        case _C_BOOL:
+        case _C_BFLD:
+        case _C_CHR:
+        case _C_UCHR: {
+            return YES;
+        }
+            
+        default:
+            return NO;
+    }
+}
+
 NS_INLINE BOOL reachRootClass(Class cls) { return cls == [ZHYCodingModel class]; }
 
 static NSString * const kZHYCodingModelErrorDomain = @"cn.zhy.error.codingModel";
@@ -152,6 +183,7 @@ if (!object) {\
 
             ptrdiff_t offset = ivar_getOffset(ivar);
             void *ptrVar = ptrBase + offset;
+            
             
             
             id var = [self valueForKey:varName];
