@@ -22,14 +22,7 @@ NS_INLINE NSString *NSStringFromIvarName(Ivar ivar) {
     return varName;
 }
 
-NS_INLINE BOOL isAllowedEncodingIvar(Ivar ivar) {
-    if (!ivar) {
-        return NO;
-    }
-
-    const char *encodingType = ivar_getTypeEncoding(ivar);
-    const char typeFlag = encodingType[0];
-
+NS_INLINE BOOL isAllowedEncodingIvar(const char typeFlag) {
     /**
      *  Objective-C runtime encoding type.
      *  See https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/ObjCRuntimeGuide/Articles/ocrtTypeEncodings.html
@@ -62,14 +55,11 @@ NS_INLINE BOOL isAllowedEncodingIvar(Ivar ivar) {
     }
 }
 
-NS_INLINE BOOL supportNumberWrapper(Ivar ivar) {
-    if (!ivar) {
-        return NO;
-    }
-    
-    const char *encodingType = ivar_getTypeEncoding(ivar);
-    const char typeFlag = encodingType[0];
-    
+NS_INLINE BOOL isObjectType(const char typeFlag) {
+    return (typeFlag == _C_ID);
+}
+
+NS_INLINE BOOL supportWrapper(const char typeFlag) {
     switch (typeFlag) {
         case _C_SHT:
         case _C_USHT:
@@ -177,16 +167,26 @@ if (!object) {\
 
             NSString *varName = NSStringFromIvarName(ivar);
 
+            const char *encodingType = ivar_getTypeEncoding(ivar);
+            const char typeFlag = encodingType[0];
+            
             VAR_LENGTH_CHECK(varName);
             HAS_SKIP_CHECK(varName);
-            ENCODE_TYPE_CHECK(ivar, varName);
+            ENCODE_TYPE_CHECK(typeFlag, varName);
 
-            ptrdiff_t offset = ivar_getOffset(ivar);
-            void *ptrVar = ptrBase + offset;
-            
-            
-            
-            id var = [self valueForKey:varName];
+            id var;
+            if (isObjectType(typeFlag)) {
+                var = object_getIvar(self, ivar);
+            } else if (supportWrapper(typeFlag)) {
+                ptrdiff_t offset = ivar_getOffset(ivar);
+                void *ptrVar = ptrBase + offset;
+                NSValue *valueWrapper = [NSValue value:ptrVar withObjCType:encodingType];
+                
+                var = valueWrapper;
+            } else {
+                NSAssert(NO, @"Invalid branch. <Type: %s>", encodingType);
+            }
+    
             ENCODE_NIL_CHECK(var, cls);
 
             id replaceVar = [self willEncodeValue:var forKey:varName inClass:cls];
@@ -239,9 +239,12 @@ if (!object) {\
 
             NSString *varName = NSStringFromIvarName(ivar);
 
+            const char *encodingType = ivar_getTypeEncoding(ivar);
+            const char typeFlag = encodingType[0];
+            
             VAR_LENGTH_CHECK(varName);
             HAS_SKIP_CHECK(varName);
-            ENCODE_TYPE_CHECK(ivar, varName);
+            ENCODE_TYPE_CHECK(typeFlag, varName);
 
             NSString *decodeKey = [NSString stringWithFormat:@"%@_%@", clsName, varName];
 
