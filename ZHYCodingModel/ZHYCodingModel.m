@@ -83,6 +83,13 @@ NS_INLINE BOOL supportWrapper(const char typeFlag) {
     }
 }
 
+NS_INLINE void *pointerToIvar(void *base, Ivar ivar) {
+    ptrdiff_t offset = ivar_getOffset(ivar);
+    void *ptrVar = base + offset;
+    
+    return ptrVar;
+}
+
 NS_INLINE BOOL reachRootClass(Class cls) { return cls == [ZHYCodingModel class]; }
 
 static NSString * const kZHYCodingModelErrorDomain = @"cn.zhy.error.codingModel";
@@ -178,13 +185,12 @@ if (!object) {\
             if (isObjectType(typeFlag)) {
                 var = object_getIvar(self, ivar);
             } else if (supportWrapper(typeFlag)) {
-                ptrdiff_t offset = ivar_getOffset(ivar);
-                void *ptrVar = ptrBase + offset;
-                NSValue *valueWrapper = [NSValue value:ptrVar withObjCType:encodingType];
+                void *ptrVar = pointerToIvar(ptrBase, ivar);
+                NSValue *valueWrapper = [NSValue value:ptrVar withObjCType:encodingType]; // Wrap with NSValue
                 
                 var = valueWrapper;
             } else {
-                NSAssert(NO, @"Invalid branch. <Type: %s>", encodingType);
+                NSAssert(NO, @"Invalid encode branch. <Type: %s>", encodingType);
             }
     
             ENCODE_NIL_CHECK(var, cls);
@@ -228,6 +234,8 @@ if (!object) {\
 - (void)coderWillDecode:(NSCoder *)aDecoder {
     Class<ZHYCodingProtocol> cls = [self class];
 
+    void *ptrBase = (__bridge void *)self;
+    
     while (!reachRootClass(cls)) {        // recursion ivar to root class
         NSString *clsName = NSStringFromClass(cls);
 
@@ -257,8 +265,24 @@ if (!object) {\
             if (var) {
                 id replaceVar = [self willDecodeValue:var forKey:varName inClass:cls];
 
-                object_setIvar(self, ivar, replaceVar);
-//                [self setValue:replaceVar forKey:varName];
+                BOOL didReplace = (replaceVar != var);
+                if (didReplace) {
+                    //TODO:
+                } else {
+                    if (isObjectType(typeFlag)) {
+                        object_setIvar(self, ivar, replaceVar);
+                    } else if (supportWrapper(typeFlag)) {
+                        if ([replaceVar isKindOfClass:[NSValue class]]) {
+                            NSValue *wrapperValue = (NSValue *)replaceVar;
+                            void *ivarPtr = pointerToIvar(ptrBase, ivar);
+                            [wrapperValue getValue:ivarPtr];
+                        } else {
+                            //TODO: Invalid
+                        }
+                    } else {
+                        NSAssert(NO, @"Invalid decode branch. <Type: %s>", encodingType);
+                    }
+                }
             } else {
                 [self decodeNilValueForKey:varName inClass:cls];
             }
