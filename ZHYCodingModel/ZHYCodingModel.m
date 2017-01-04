@@ -264,24 +264,19 @@ if (!object) {\
 
             if (var) {
                 id replaceVar = [self willDecodeValue:var forKey:varName inClass:cls];
-
-                BOOL didReplace = (replaceVar != var);
-                if (didReplace) {
-                    //TODO:
-                } else {
-                    if (isObjectType(typeFlag)) {
-                        object_setIvar(self, ivar, replaceVar);
-                    } else if (supportWrapper(typeFlag)) {
-                        if ([replaceVar isKindOfClass:[NSValue class]]) {
-                            NSValue *wrapperValue = (NSValue *)replaceVar;
-                            void *ivarPtr = pointerToIvar(ptrBase, ivar);
-                            [wrapperValue getValue:ivarPtr];
-                        } else {
-                            //TODO: Invalid
-                        }
-                    } else {
-                        NSAssert(NO, @"Invalid decode branch. <Type: %s>", encodingType);
+                
+                if (isObjectType(typeFlag)) {
+                    object_setIvar(self, ivar, replaceVar);
+                } else if (supportWrapper(typeFlag)) {
+                    if ([replaceVar isKindOfClass:[NSValue class]]) {
+                        NSValue *wrapperValue = (NSValue *)replaceVar;
+                        void *ivarPtr = pointerToIvar(ptrBase, ivar);
+                        [wrapperValue getValue:ivarPtr];
+                    } else {    // Unreachable
+                        NSAssert(NO, @"Invalid class for decode. <Class: %@>", [replaceVar class]);
                     }
+                } else {
+                    NSAssert(NO, @"Invalid decode branch. <Type: %s>", encodingType);
                 }
             } else {
                 [self decodeNilValueForKey:varName inClass:cls];

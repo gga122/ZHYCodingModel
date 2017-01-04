@@ -26,15 +26,6 @@ int main(int argc, const char * argv[]) {
         }
     }
 
-    Ivar ivar = class_getInstanceVariable([TestSubClass class], "_floatValue");
-    ptrdiff_t offset = ivar_getOffset(ivar);
-    void *value = ((__bridge void *)archiverObject + offset);
-    float *fptr = (float *)value;
-    float f = *fptr;
-    NSLog(@"%f", f);
-
-    id vv = object_getIvar(archiverObject, ivar);
-
     BOOL archiverSucceed = [NSKeyedArchiver archiveRootObject:archiverObject toFile:path];
     NSLog(@"Test encode: %@\n", (archiverSucceed ? @"YES" : @"NO"));
 
