@@ -25,9 +25,11 @@ union unionType {
     CGPoint point;
 };
 
+static int const kZHYAdvancedTypeTestClassArraySize = 3;
+
 @interface ZHYAdvancedTypeTestClass : ZHYBaseTypeTestClass {
     @private
-    char _charArray[3];
+    char _charArray[kZHYAdvancedTypeTestClassArraySize];
 }
 
 @property (nonatomic, assign) void *ptrValue;
@@ -35,5 +37,7 @@ union unionType {
 
 @property (nonatomic, assign) CGRect rectValue;
 @property (nonatomic, assign) union unionType unionValue;
+
+- (BOOL)isCArrayEqualTo:(ZHYAdvancedTypeTestClass *)object;
 
 @end

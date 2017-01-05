@@ -46,12 +46,8 @@
         return NO;
     }
 
-    for (int i = 0; i < 3; ++i) {
-        char a = _charArray[i];
-        char b = object->_charArray[i];
-        if (a != b) {
-            return NO;
-        }
+    if (![self isCArrayEqualTo:object]) {
+        return NO;
     }
     
     if (!NSEqualRects(object.rectValue, _rectValue)) {
@@ -65,6 +61,18 @@
     }
     
     return [super isEqual:object];
+}
+
+- (BOOL)isCArrayEqualTo:(ZHYAdvancedTypeTestClass *)object {
+    for (int i = 0; i < kZHYAdvancedTypeTestClassArraySize; ++i) {
+        char a = _charArray[i];
+        char b = object->_charArray[i];
+        if (a != b) {
+            return NO;
+        }
+    }
+    
+    return YES;
 }
 
 @end
