@@ -54,7 +54,7 @@
     return [NSKeyedArchiver archiveRootObject:object toFile:filePath];
 }
 
-- (id<NSCoding>)unarchiveObjectWithFileName:(NSString *)fileName {
+- (__kindof id<NSCoding>)unarchiveObjectWithFileName:(NSString *)fileName {
     NSParameterAssert(fileName);
     
     NSString *filePath = [self pathForFileName:fileName];
@@ -64,13 +64,16 @@
 #pragma mark - Test
 
 - (void)testPureObjectCoding {
-    NSString *filePath = [self pathForFileName:@"pureObject.dat"];
+    static NSString * const kPureObjectFileName = @"pureObject.dat";
     
     ZHYTestClass *archiverObject = [[ZHYTestClass alloc] init];
+    BOOL res = [self archiveObject:archiverObject withFileName:kPureObjectFileName];
+    XCTAssertTrue(res);
     
+    ZHYTestClass *unarchiverObject = [self unarchiveObjectWithFileName:kPureObjectFileName];
+    XCTAssertNotNil(unarchiverObject);
     
-    
-    
+    XCTAssertEqualObjects(archiverObject, unarchiverObject);
 }
 
 
