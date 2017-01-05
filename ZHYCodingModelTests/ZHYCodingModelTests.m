@@ -76,5 +76,18 @@
     XCTAssertEqualObjects(archiverObject, unarchiverObject);
 }
 
+- (void)testBaseTypeObjectCoding {
+    static NSString * const kBaseTypeObjectFileName = @"baseTypeObject.dat";
+    
+    ZHYBaseTypeTestClass *archiverObject = [[ZHYBaseTypeTestClass alloc] init];
+    BOOL res = [self archiveObject:archiverObject withFileName:kBaseTypeObjectFileName];
+    XCTAssertTrue(res);
+    
+    ZHYBaseTypeTestClass *unarchiverObject = [self unarchiveObjectWithFileName:kBaseTypeObjectFileName];
+    XCTAssertNotNil(unarchiverObject);
+    
+    XCTAssertEqualObjects(archiverObject, unarchiverObject);
+}
+
 
 @end
