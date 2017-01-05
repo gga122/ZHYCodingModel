@@ -89,5 +89,22 @@
     XCTAssertEqualObjects(archiverObject, unarchiverObject);
 }
 
+- (void)testAdvancedTypeObjectCoding {
+    static NSString * const kAdvancedTypeObjectFileName = @"advancedTypeObject.dat";
+    
+    ZHYAdvancedTypeTestClass *archiverObject = [[ZHYAdvancedTypeTestClass alloc] init];
+    BOOL res = [self archiveObject:archiverObject withFileName:kAdvancedTypeObjectFileName];
+    XCTAssertTrue(res);
+    
+    ZHYAdvancedTypeTestClass *unarchiverObject = [self unarchiveObjectWithFileName:kAdvancedTypeObjectFileName];
+    XCTAssertNotNil(unarchiverObject);
+    
+    XCTAssertNotEqualObjects(archiverObject, unarchiverObject);
+    
+    XCTAssertNotEqual(archiverObject.ptrValue, unarchiverObject.ptrValue);
+    XCTAssertEqual(unarchiverObject.cStringValue, NULL);
+    XCTAssertFalse([archiverObject isCArrayEqualTo:unarchiverObject]);
+    XCTAssertFalse(NSEqualRects(archiverObject.rectValue, unarchiverObject.rectValue));
+}
 
 @end
