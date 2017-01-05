@@ -17,8 +17,6 @@
 		F9445B0C1E1364D300F220B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9445B0B1E1364D300F220B7 /* Assets.xcassets */; };
 		F9445B0F1E1364D300F220B7 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9445B0D1E1364D300F220B7 /* MainMenu.xib */; };
 		F9445B2D1E13654300F220B7 /* ZHYCodingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F9445B2C1E13654300F220B7 /* ZHYCodingModel.m */; };
-		F99380EE1E14A86C0070FF6B /* TestClass.m in Sources */ = {isa = PBXBuildFile; fileRef = F99380ED1E14A86C0070FF6B /* TestClass.m */; };
-		F99381051E14E9520070FF6B /* TestSubClass.m in Sources */ = {isa = PBXBuildFile; fileRef = F99381041E14E9520070FF6B /* TestSubClass.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,10 +50,6 @@
 		F9445B101E1364D300F220B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F9445B2B1E13654300F220B7 /* ZHYCodingModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHYCodingModel.h; sourceTree = "<group>"; };
 		F9445B2C1E13654300F220B7 /* ZHYCodingModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHYCodingModel.m; sourceTree = "<group>"; };
-		F99380EC1E14A86C0070FF6B /* TestClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestClass.h; sourceTree = "<group>"; };
-		F99380ED1E14A86C0070FF6B /* TestClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestClass.m; sourceTree = "<group>"; };
-		F99381031E14E9520070FF6B /* TestSubClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestSubClass.h; sourceTree = "<group>"; };
-		F99381041E14E9520070FF6B /* TestSubClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestSubClass.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,10 +108,6 @@
 				BAF3E1171E18005E00B39E5D /* ZHYAdvancedTypeTestClass.m */,
 				BA091CD81E1A9FF60046BB5D /* ZHYDuplicatedVarNameTestClass.h */,
 				BA091CD91E1A9FF60046BB5D /* ZHYDuplicatedVarNameTestClass.m */,
-				F99380EC1E14A86C0070FF6B /* TestClass.h */,
-				F99380ED1E14A86C0070FF6B /* TestClass.m */,
-				F99381031E14E9520070FF6B /* TestSubClass.h */,
-				F99381041E14E9520070FF6B /* TestSubClass.m */,
 				F9445B161E1364EB00F220B7 /* CodingModel */,
 				F9445B051E1364D300F220B7 /* AppDelegate.h */,
 				F9445B061E1364D300F220B7 /* AppDelegate.m */,
@@ -258,13 +248,11 @@
 			files = (
 				BAF3E1151E17FB6600B39E5D /* ZHYBaseTypeTestClass.m in Sources */,
 				BAF3E1121E17F7D100B39E5D /* ZHYTestClass.m in Sources */,
-				F99380EE1E14A86C0070FF6B /* TestClass.m in Sources */,
 				F9445B0A1E1364D300F220B7 /* main.m in Sources */,
 				F9445B071E1364D300F220B7 /* AppDelegate.m in Sources */,
 				BA091CDA1E1A9FF60046BB5D /* ZHYDuplicatedVarNameTestClass.m in Sources */,
 				F9445B2D1E13654300F220B7 /* ZHYCodingModel.m in Sources */,
 				BAF3E1181E18005E00B39E5D /* ZHYAdvancedTypeTestClass.m in Sources */,
-				F99381051E14E9520070FF6B /* TestSubClass.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
