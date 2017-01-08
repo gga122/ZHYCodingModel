@@ -8,6 +8,8 @@
 
 #import "ZHYTestClass.h"
 
+extern NSString * const kZHYNotPairTestClassDecodeReplacedVar;
+
 /**
  *  This class is designed to test overridden methods with coding.
  *
