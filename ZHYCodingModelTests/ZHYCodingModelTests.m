@@ -105,6 +105,10 @@
     XCTAssertEqual(unarchiverObject.cStringValue, NULL);
     XCTAssertFalse([archiverObject isCArrayEqualTo:unarchiverObject]);
     XCTAssertFalse(NSEqualRects(archiverObject.rectValue, unarchiverObject.rectValue));
+    
+    union unionType aValue = archiverObject.unionValue;
+    union unionType bValue = unarchiverObject.unionValue;
+    XCTAssertNotEqual(memcmp(&aValue, &bValue, sizeof(union unionType)), 0);
 }
 
 @end
