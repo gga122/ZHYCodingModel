@@ -10,7 +10,7 @@
 
 @interface ZHYDuplicatedVarNameTestClass () {
     NSArray<NSNumber *> *_arrayValue;
-    const char *_cStringValue;
+    char _charValue;
 }
 
 @end
@@ -18,7 +18,7 @@
 @implementation ZHYDuplicatedVarNameTestClass
 
 @synthesize arrayDuplicatedValue = _arrayValue;
-@synthesize cStringDuplicatedValue = _cStringValue;
+@synthesize charDuplicatedValue = _charValue;
 
 #pragma mark - Overridden
 
@@ -26,7 +26,7 @@
     self = [super init];
     if (self) {
         _arrayValue = @[@(1991), @(8), @(26)];
-        _cStringValue = "abc\0";
+        _charValue = 'z';
     }
     
     return self;
@@ -47,7 +47,7 @@
         return NO;
     }
     
-    if (strcmp(object.cStringDuplicatedValue, _cStringValue) != 0) {
+    if (object.charDuplicatedValue != _charValue) {
         return NO;
     }
     

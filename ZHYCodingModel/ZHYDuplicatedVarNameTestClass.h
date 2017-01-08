@@ -14,7 +14,7 @@
  *  I declared 2 varibles, named them as same as super class declared.
  *
  *  Duplicated name:
- *  1. _cStringValue in class 'ZHYAdvancedTypeTestClass'
+ *  1. _charValue in class 'ZHYBaseTypeTestClass'
  *  2. _arrayValue in class 'ZHYTestClass'
  *
  */
@@ -22,6 +22,6 @@
 @interface ZHYDuplicatedVarNameTestClass : ZHYAdvancedTypeTestClass
 
 @property (nonatomic, strong) NSArray<NSNumber *> *arrayDuplicatedValue;
-@property (nonatomic, assign) const char *cStringDuplicatedValue;
+@property (nonatomic, assign) char charDuplicatedValue;
 
 @end
