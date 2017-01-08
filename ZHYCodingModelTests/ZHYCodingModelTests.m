@@ -7,6 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "ZHYAdvancedTypeTestClass.h"
 #import "ZHYDuplicatedVarNameTestClass.h"
 
 @interface ZHYCodingModelTests : XCTestCase
@@ -109,6 +110,19 @@
     union unionType aValue = archiverObject.unionValue;
     union unionType bValue = unarchiverObject.unionValue;
     XCTAssertNotEqual(memcmp(&aValue, &bValue, sizeof(union unionType)), 0);
+}
+
+- (void)testDuplicatedVarNameCoding {
+    static NSString * const kDuplicatedVarNameObjectFileName = @"duplicatedVarNameObject.dat";
+    
+    ZHYDuplicatedVarNameTestClass *archiverObject = [[ZHYDuplicatedVarNameTestClass alloc] init];
+    BOOL res = [self archiveObject:archiverObject withFileName:kDuplicatedVarNameObjectFileName];
+    XCTAssertTrue(res);
+    
+    ZHYDuplicatedVarNameTestClass *unarchiverObject = [self unarchiveObjectWithFileName:kDuplicatedVarNameObjectFileName];
+    XCTAssertNotNil(unarchiverObject);
+    
+    XCTAssertEqualObjects(archiverObject, unarchiverObject);
 }
 
 @end
