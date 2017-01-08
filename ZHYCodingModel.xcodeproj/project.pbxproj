@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BA091CDA1E1A9FF60046BB5D /* ZHYDuplicatedVarNameTestClass.m in Sources */ = {isa = PBXBuildFile; fileRef = BA091CD91E1A9FF60046BB5D /* ZHYDuplicatedVarNameTestClass.m */; };
+		BA500E361E22A6A300086032 /* ZHYNotPairTestClass.m in Sources */ = {isa = PBXBuildFile; fileRef = BA500E351E22A6A300086032 /* ZHYNotPairTestClass.m */; };
 		BAF3E1091E17F6EF00B39E5D /* ZHYCodingModelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BAF3E1081E17F6EF00B39E5D /* ZHYCodingModelTests.m */; };
 		BAF3E1121E17F7D100B39E5D /* ZHYTestClass.m in Sources */ = {isa = PBXBuildFile; fileRef = BAF3E1111E17F7D100B39E5D /* ZHYTestClass.m */; };
 		BAF3E1151E17FB6600B39E5D /* ZHYBaseTypeTestClass.m in Sources */ = {isa = PBXBuildFile; fileRef = BAF3E1141E17FB6600B39E5D /* ZHYBaseTypeTestClass.m */; };
@@ -32,6 +33,8 @@
 /* Begin PBXFileReference section */
 		BA091CD81E1A9FF60046BB5D /* ZHYDuplicatedVarNameTestClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHYDuplicatedVarNameTestClass.h; sourceTree = "<group>"; };
 		BA091CD91E1A9FF60046BB5D /* ZHYDuplicatedVarNameTestClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHYDuplicatedVarNameTestClass.m; sourceTree = "<group>"; };
+		BA500E341E22A6A300086032 /* ZHYNotPairTestClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHYNotPairTestClass.h; sourceTree = "<group>"; };
+		BA500E351E22A6A300086032 /* ZHYNotPairTestClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHYNotPairTestClass.m; sourceTree = "<group>"; };
 		BAF3E1061E17F6EF00B39E5D /* ZHYCodingModelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZHYCodingModelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAF3E1081E17F6EF00B39E5D /* ZHYCodingModelTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZHYCodingModelTests.m; sourceTree = "<group>"; };
 		BAF3E10A1E17F6EF00B39E5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -108,6 +111,8 @@
 				BAF3E1171E18005E00B39E5D /* ZHYAdvancedTypeTestClass.m */,
 				BA091CD81E1A9FF60046BB5D /* ZHYDuplicatedVarNameTestClass.h */,
 				BA091CD91E1A9FF60046BB5D /* ZHYDuplicatedVarNameTestClass.m */,
+				BA500E341E22A6A300086032 /* ZHYNotPairTestClass.h */,
+				BA500E351E22A6A300086032 /* ZHYNotPairTestClass.m */,
 				F9445B161E1364EB00F220B7 /* CodingModel */,
 				F9445B051E1364D300F220B7 /* AppDelegate.h */,
 				F9445B061E1364D300F220B7 /* AppDelegate.m */,
@@ -252,6 +257,7 @@
 				F9445B071E1364D300F220B7 /* AppDelegate.m in Sources */,
 				BA091CDA1E1A9FF60046BB5D /* ZHYDuplicatedVarNameTestClass.m in Sources */,
 				F9445B2D1E13654300F220B7 /* ZHYCodingModel.m in Sources */,
+				BA500E361E22A6A300086032 /* ZHYNotPairTestClass.m in Sources */,
 				BAF3E1181E18005E00B39E5D /* ZHYAdvancedTypeTestClass.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
