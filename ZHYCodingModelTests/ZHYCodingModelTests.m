@@ -7,8 +7,11 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "ZHYTestClass.h"
+#import "ZHYBaseTypeTestClass.h"
 #import "ZHYAdvancedTypeTestClass.h"
 #import "ZHYDuplicatedVarNameTestClass.h"
+#import "ZHYNotPairTestClass.h"
 
 @interface ZHYCodingModelTests : XCTestCase
 
@@ -125,4 +128,19 @@
     XCTAssertEqualObjects(archiverObject, unarchiverObject);
 }
 
+- (void)testNotPairMethodOverriddenCoding {
+    static NSString * const kNotPairMethodOverriddenObjectFileName = @"notPairMethodOverriddenObject.dat";
+    
+    ZHYNotPairTestClass *archiverObject = [[ZHYNotPairTestClass alloc] init];
+    BOOL res = [self archiveObject:archiverObject withFileName:kNotPairMethodOverriddenObjectFileName];
+    XCTAssertTrue(res);
+    
+    ZHYNotPairTestClass *unarchiverObject = [self unarchiveObjectWithFileName:kNotPairMethodOverriddenObjectFileName];
+    XCTAssertNotNil(unarchiverObject);
+    
+    XCTAssertNotEqualObjects(archiverObject, unarchiverObject);
+    XCTAssertEqualObjects(unarchiverObject.stringValue, kZHYNotPairTestClassDecodeReplacedVar);
+}
+
 @end
+
