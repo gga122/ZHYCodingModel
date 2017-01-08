@@ -6,7 +6,7 @@
 //  Copyright © 2017年 John Henry. All rights reserved.
 //
 
-#import "ZHYAdvancedTypeTestClass.h"
+#import "ZHYBaseTypeTestClass.h"
 
 /**
  *  This class is designed to test duplicated variable name with coding.
@@ -19,7 +19,7 @@
  *
  */
 
-@interface ZHYDuplicatedVarNameTestClass : ZHYAdvancedTypeTestClass
+@interface ZHYDuplicatedVarNameTestClass : ZHYBaseTypeTestClass
 
 @property (nonatomic, strong) NSArray<NSNumber *> *arrayDuplicatedValue;
 @property (nonatomic, assign) char charDuplicatedValue;

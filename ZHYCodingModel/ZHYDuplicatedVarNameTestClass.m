@@ -47,6 +47,14 @@
         return NO;
     }
     
+    for (NSInteger i = 0; i < _arrayValue.count; ++i) {
+        NSNumber *num1 = object.arrayDuplicatedValue[i];
+        NSNumber *num2 = _arrayValue[i];
+        if (![num1 isEqualToNumber:num2]) {
+            return NO;
+        }
+    }
+    
     if (object.charDuplicatedValue != _charValue) {
         return NO;
     }
