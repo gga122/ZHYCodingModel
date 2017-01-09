@@ -16,6 +16,12 @@
 		BA71F37A1E23FD02002E9D28 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA71F3791E23FD02002E9D28 /* Assets.xcassets */; };
 		BA71F37D1E23FD02002E9D28 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA71F37B1E23FD02002E9D28 /* LaunchScreen.storyboard */; };
 		BA71F3881E23FD03002E9D28 /* ZHYCodingModelForiOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BA71F3871E23FD03002E9D28 /* ZHYCodingModelForiOSTests.m */; };
+		BA71F3911E23FDD5002E9D28 /* ZHYTestClass.m in Sources */ = {isa = PBXBuildFile; fileRef = BAF3E1111E17F7D100B39E5D /* ZHYTestClass.m */; };
+		BA71F3931E23FDD5002E9D28 /* ZHYBaseTypeTestClass.m in Sources */ = {isa = PBXBuildFile; fileRef = BAF3E1141E17FB6600B39E5D /* ZHYBaseTypeTestClass.m */; };
+		BA71F3951E23FDD5002E9D28 /* ZHYAdvancedTypeTestClass.m in Sources */ = {isa = PBXBuildFile; fileRef = BAF3E1171E18005E00B39E5D /* ZHYAdvancedTypeTestClass.m */; };
+		BA71F3971E23FDD5002E9D28 /* ZHYDuplicatedVarNameTestClass.m in Sources */ = {isa = PBXBuildFile; fileRef = BA091CD91E1A9FF60046BB5D /* ZHYDuplicatedVarNameTestClass.m */; };
+		BA71F3991E23FDD5002E9D28 /* ZHYNotPairTestClass.m in Sources */ = {isa = PBXBuildFile; fileRef = BA500E351E22A6A300086032 /* ZHYNotPairTestClass.m */; };
+		BA71F39A1E23FE41002E9D28 /* ZHYCodingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F9445B2C1E13654300F220B7 /* ZHYCodingModel.m */; };
 		BAF3E1091E17F6EF00B39E5D /* ZHYCodingModelTestsForMac.m in Sources */ = {isa = PBXBuildFile; fileRef = BAF3E1081E17F6EF00B39E5D /* ZHYCodingModelTestsForMac.m */; };
 		BAF3E1121E17F7D100B39E5D /* ZHYTestClass.m in Sources */ = {isa = PBXBuildFile; fileRef = BAF3E1111E17F7D100B39E5D /* ZHYTestClass.m */; };
 		BAF3E1151E17FB6600B39E5D /* ZHYBaseTypeTestClass.m in Sources */ = {isa = PBXBuildFile; fileRef = BAF3E1141E17FB6600B39E5D /* ZHYBaseTypeTestClass.m */; };
@@ -397,6 +403,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA71F39A1E23FE41002E9D28 /* ZHYCodingModel.m in Sources */,
+				BA71F3911E23FDD5002E9D28 /* ZHYTestClass.m in Sources */,
+				BA71F3931E23FDD5002E9D28 /* ZHYBaseTypeTestClass.m in Sources */,
+				BA71F3951E23FDD5002E9D28 /* ZHYAdvancedTypeTestClass.m in Sources */,
+				BA71F3971E23FDD5002E9D28 /* ZHYDuplicatedVarNameTestClass.m in Sources */,
+				BA71F3991E23FDD5002E9D28 /* ZHYNotPairTestClass.m in Sources */,
 				BA71F3751E23FD02002E9D28 /* ViewController.m in Sources */,
 				BA71F3721E23FD02002E9D28 /* AppDelegate.m in Sources */,
 				BA71F36F1E23FD02002E9D28 /* main.m in Sources */,

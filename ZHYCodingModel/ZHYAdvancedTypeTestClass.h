@@ -7,6 +7,7 @@
 //
 
 #import "ZHYBaseTypeTestClass.h"
+#import <CoreGraphics/CoreGraphics.h>
 
 /**
  *  This class is designed to test C advanced types coding.

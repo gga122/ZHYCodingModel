@@ -50,9 +50,15 @@
         return NO;
     }
     
+#if !TARGET_OS_IPHONE
     if (!NSEqualRects(object.rectValue, _rectValue)) {
         return NO;
     }
+#else
+    if (!CGRectEqualToRect(object.rectValue, _rectValue)) {
+        return NO;
+    }
+#endif
 
     union unionType u1 = object.unionValue;
     union unionType u2 = _unionValue;
