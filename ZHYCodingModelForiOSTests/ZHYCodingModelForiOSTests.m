@@ -144,9 +144,16 @@
 }
 
 - (void)testSystemStructTypeObjectCoding {
+    static NSString * const ksSystemStructObjectFileName = @"notPairMethodOverriddenObject.dat";
     
+    ZHYSystemStructTestClass *archiverObject = [[ZHYSystemStructTestClass alloc] init];
+    BOOL res = [self archiveObject:archiverObject withFileName:ksSystemStructObjectFileName];
+    XCTAssertTrue(res);
     
+    ZHYSystemStructTestClass *unarchiverObject = [self unarchiveObjectWithFileName:ksSystemStructObjectFileName];
+    XCTAssertNotNil(unarchiverObject);
     
+    XCTAssertNotEqualObjects(archiverObject, unarchiverObject);
 }
 
 @end
