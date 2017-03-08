@@ -26,6 +26,7 @@
 		BAF3E1121E17F7D100B39E5D /* ZHYTestClass.m in Sources */ = {isa = PBXBuildFile; fileRef = BAF3E1111E17F7D100B39E5D /* ZHYTestClass.m */; };
 		BAF3E1151E17FB6600B39E5D /* ZHYBaseTypeTestClass.m in Sources */ = {isa = PBXBuildFile; fileRef = BAF3E1141E17FB6600B39E5D /* ZHYBaseTypeTestClass.m */; };
 		BAF3E1181E18005E00B39E5D /* ZHYAdvancedTypeTestClass.m in Sources */ = {isa = PBXBuildFile; fileRef = BAF3E1171E18005E00B39E5D /* ZHYAdvancedTypeTestClass.m */; };
+		D224DACE1E702AD0008B43E8 /* ZHYSystemStructTestClass.m in Sources */ = {isa = PBXBuildFile; fileRef = D224DACD1E702AD0008B43E8 /* ZHYSystemStructTestClass.m */; };
 		F9445B071E1364D300F220B7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F9445B061E1364D300F220B7 /* AppDelegate.m */; };
 		F9445B0A1E1364D300F220B7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F9445B091E1364D300F220B7 /* main.m */; };
 		F9445B0C1E1364D300F220B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9445B0B1E1364D300F220B7 /* Assets.xcassets */; };
@@ -77,6 +78,8 @@
 		BAF3E1141E17FB6600B39E5D /* ZHYBaseTypeTestClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZHYBaseTypeTestClass.m; path = ZHYCodingModel/ZHYBaseTypeTestClass.m; sourceTree = "<group>"; };
 		BAF3E1161E18005E00B39E5D /* ZHYAdvancedTypeTestClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZHYAdvancedTypeTestClass.h; path = ZHYCodingModel/ZHYAdvancedTypeTestClass.h; sourceTree = "<group>"; };
 		BAF3E1171E18005E00B39E5D /* ZHYAdvancedTypeTestClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZHYAdvancedTypeTestClass.m; path = ZHYCodingModel/ZHYAdvancedTypeTestClass.m; sourceTree = "<group>"; };
+		D224DACC1E702AD0008B43E8 /* ZHYSystemStructTestClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHYSystemStructTestClass.h; sourceTree = "<group>"; };
+		D224DACD1E702AD0008B43E8 /* ZHYSystemStructTestClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHYSystemStructTestClass.m; sourceTree = "<group>"; };
 		F9445B021E1364D300F220B7 /* ZHYCodingModelForMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZHYCodingModelForMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9445B051E1364D300F220B7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F9445B061E1364D300F220B7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -133,6 +136,8 @@
 				BA091CD91E1A9FF60046BB5D /* ZHYDuplicatedVarNameTestClass.m */,
 				BA500E341E22A6A300086032 /* ZHYNotPairTestClass.h */,
 				BA500E351E22A6A300086032 /* ZHYNotPairTestClass.m */,
+				D224DACC1E702AD0008B43E8 /* ZHYSystemStructTestClass.h */,
+				D224DACD1E702AD0008B43E8 /* ZHYSystemStructTestClass.m */,
 				F9445B161E1364EB00F220B7 /* CodingModel */,
 			);
 			name = ZHYCodingModel;
@@ -440,6 +445,7 @@
 				F9445B0A1E1364D300F220B7 /* main.m in Sources */,
 				F9445B071E1364D300F220B7 /* AppDelegate.m in Sources */,
 				BA091CDA1E1A9FF60046BB5D /* ZHYDuplicatedVarNameTestClass.m in Sources */,
+				D224DACE1E702AD0008B43E8 /* ZHYSystemStructTestClass.m in Sources */,
 				F9445B2D1E13654300F220B7 /* ZHYCodingModel.m in Sources */,
 				BA500E361E22A6A300086032 /* ZHYNotPairTestClass.m in Sources */,
 				BAF3E1181E18005E00B39E5D /* ZHYAdvancedTypeTestClass.m in Sources */,
@@ -704,6 +710,7 @@
 				BA71F38C1E23FD03002E9D28 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BA71F38D1E23FD03002E9D28 /* Build configuration list for PBXNativeTarget "ZHYCodingModelForiOSTests" */ = {
 			isa = XCConfigurationList;
@@ -712,6 +719,7 @@
 				BA71F38F1E23FD03002E9D28 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BAF3E10D1E17F6EF00B39E5D /* Build configuration list for PBXNativeTarget "ZHYCodingModelTestsForMac" */ = {
 			isa = XCConfigurationList;
