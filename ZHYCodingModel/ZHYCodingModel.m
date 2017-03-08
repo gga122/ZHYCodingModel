@@ -22,7 +22,38 @@ NS_INLINE NSString *NSStringFromIvarName(Ivar ivar) {
     return varName;
 }
 
-NS_INLINE BOOL isAllowedEncodingIvar(const char typeFlag) {
+NS_INLINE BOOL isCGRectType(const char *type) {
+    static const char *kCGRectType = "{CGRect=\"origin\"{CGPoint=\"x\"d\"y\"d}\"size\"{CGSize=\"width\"d\"height\"d}}";
+    return (strcmp(type, kCGRectType) != 0);
+}
+
+NS_INLINE BOOL isCGPointType(const char *type) {
+    static const char *kCGPointType = "{CGPoint=\"x\"d\"y\"d}";
+    return (strcmp(type, kCGPointType) != 0);
+}
+
+NS_INLINE BOOL isCGSizeType(const char *type) {
+    static const char *kCGSizeType = "{CGSize=\"width\"d\"height\"d}";
+    return (strcmp(type, kCGSizeType) != 0);
+}
+
+NS_INLINE BOOL isAllowedSystemStructs(const char *type) {
+    if (isCGPointType(type)) {
+        return YES;
+    }
+    
+    if (isCGSizeType(type)) {
+        return YES;
+    }
+    
+    if (isCGRectType(type)) {
+        return YES;
+    }
+    
+    return NO;
+}
+
+NS_INLINE BOOL isAllowedEncodingIvar(const char *type) {
     /**
      *  Objective-C runtime encoding type.
      *  See https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/ObjCRuntimeGuide/Articles/ocrtTypeEncodings.html
@@ -31,6 +62,8 @@ NS_INLINE BOOL isAllowedEncodingIvar(const char typeFlag) {
      *  caller wished. So, I ban those type.
      *  See https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/Archiving/Articles/codingctypes.html#//apple_ref/doc/uid/20001294-BBCBDHBI
      */
+    const char typeFlag = type[0];
+    
     switch (typeFlag) {
         case _C_CLASS:
         case _C_SEL:
@@ -43,7 +76,9 @@ NS_INLINE BOOL isAllowedEncodingIvar(const char typeFlag) {
         case _C_ARY_E:
         case _C_UNION_B:
         case _C_UNION_E:
-        case _C_STRUCT_B:
+        case _C_STRUCT_B: {
+            return isAllowedSystemStructs(type);
+        }
         case _C_STRUCT_E:
         case _C_VECTOR:
         case _C_CONST: {
@@ -59,7 +94,9 @@ NS_INLINE BOOL isObjectType(const char typeFlag) {
     return (typeFlag == _C_ID);
 }
 
-NS_INLINE BOOL supportWrapper(const char typeFlag) {
+NS_INLINE BOOL supportWrapper(const char *type) {
+    const char typeFlag = type[0];
+    
     switch (typeFlag) {
         case _C_SHT:
         case _C_USHT:
@@ -179,18 +216,19 @@ if (!object) {\
             
             VAR_LENGTH_CHECK(varName);
             HAS_SKIP_CHECK(varName);
-            ENCODE_TYPE_CHECK(typeFlag, varName);
+            ENCODE_TYPE_CHECK(encodingType, varName);
 
             id var;
             if (isObjectType(typeFlag)) {
                 var = object_getIvar(self, ivar);
-            } else if (supportWrapper(typeFlag)) {
+            } else if (supportWrapper(encodingType)) {
                 void *ptrVar = pointerToIvar(ptrBase, ivar);
                 NSValue *valueWrapper = [NSValue value:ptrVar withObjCType:encodingType]; // Wrap with NSValue
                 
                 var = valueWrapper;
             } else {
                 NSAssert(NO, @"Invalid encode branch. <Type: %s>", encodingType);
+                
             }
     
             ENCODE_NIL_CHECK(var, cls);
@@ -205,7 +243,7 @@ if (!object) {\
                 if (didReplace) {
                     encodeKey = [NSString stringWithFormat:@"%@%@", kZHYCodingModelReplacePrefix, encodeKey];
                 }
-
+                
                 [aCoder encodeObject:replaceVar forKey:encodeKey];
             } else {
                 NSLog(@"***** Warn ***** Invalid value for encode. <varName: %@><var: %@>", varName, var);
@@ -252,7 +290,7 @@ if (!object) {\
             
             VAR_LENGTH_CHECK(varName);
             HAS_SKIP_CHECK(varName);
-            ENCODE_TYPE_CHECK(typeFlag, varName);
+            ENCODE_TYPE_CHECK(encodingType, varName);
 
             NSString *decodeKey = [NSString stringWithFormat:@"%@_%@", clsName, varName];
 
@@ -267,7 +305,7 @@ if (!object) {\
                 
                 if (isObjectType(typeFlag)) {
                     object_setIvar(self, ivar, replaceVar);
-                } else if (supportWrapper(typeFlag)) {
+                } else if (supportWrapper(encodingType)) {
                     if ([replaceVar isKindOfClass:[NSValue class]]) {
                         NSValue *wrapperValue = (NSValue *)replaceVar;
                         void *ivarPtr = pointerToIvar(ptrBase, ivar);
