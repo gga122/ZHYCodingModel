@@ -14,4 +14,8 @@
  */
 @interface ZHYSystemStructTestClass : ZHYCodingModel
 
+@property (nonatomic, assign) CGRect rect;
+@property (nonatomic, assign) CGPoint point;
+@property (nonatomic, assign) CGSize size;
+
 @end

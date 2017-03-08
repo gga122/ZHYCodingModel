@@ -12,6 +12,7 @@
 #import "ZHYAdvancedTypeTestClass.h"
 #import "ZHYDuplicatedVarNameTestClass.h"
 #import "ZHYNotPairTestClass.h"
+#import "ZHYSystemStructTestClass.h"
 
 @interface ZHYCodingModelTests : XCTestCase
 
@@ -142,5 +143,10 @@
     XCTAssertEqualObjects(unarchiverObject.stringValue, kZHYNotPairTestClassDecodeReplacedVar);
 }
 
-@end
+- (void)testSystemStructTypeObjectCoding {
+    
+    
+    
+}
 
+@end
