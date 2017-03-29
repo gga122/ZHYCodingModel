@@ -28,6 +28,7 @@
 		BAF3E1181E18005E00B39E5D /* ZHYAdvancedTypeTestClass.m in Sources */ = {isa = PBXBuildFile; fileRef = BAF3E1171E18005E00B39E5D /* ZHYAdvancedTypeTestClass.m */; };
 		D224DACE1E702AD0008B43E8 /* ZHYSystemStructTestClass.m in Sources */ = {isa = PBXBuildFile; fileRef = D224DACD1E702AD0008B43E8 /* ZHYSystemStructTestClass.m */; };
 		D2AE828B1E8BD8BB00E7A443 /* ZHYRectModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D2AE828A1E8BD8BB00E7A443 /* ZHYRectModel.m */; };
+		D2AE828F1E8BDBBC00E7A443 /* ZHYPointModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D2AE828E1E8BDBBC00E7A443 /* ZHYPointModel.m */; };
 		F9445B071E1364D300F220B7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F9445B061E1364D300F220B7 /* AppDelegate.m */; };
 		F9445B0A1E1364D300F220B7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F9445B091E1364D300F220B7 /* main.m */; };
 		F9445B0C1E1364D300F220B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9445B0B1E1364D300F220B7 /* Assets.xcassets */; };
@@ -84,6 +85,8 @@
 		D2AE82891E8BD8BB00E7A443 /* ZHYRectModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHYRectModel.h; sourceTree = "<group>"; };
 		D2AE828A1E8BD8BB00E7A443 /* ZHYRectModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHYRectModel.m; sourceTree = "<group>"; };
 		D2AE828C1E8BD8FC00E7A443 /* ZHYStructConvertible.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHYStructConvertible.h; sourceTree = "<group>"; };
+		D2AE828D1E8BDBBC00E7A443 /* ZHYPointModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHYPointModel.h; sourceTree = "<group>"; };
+		D2AE828E1E8BDBBC00E7A443 /* ZHYPointModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHYPointModel.m; sourceTree = "<group>"; };
 		F9445B021E1364D300F220B7 /* ZHYCodingModelForMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZHYCodingModelForMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9445B051E1364D300F220B7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F9445B061E1364D300F220B7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -195,6 +198,8 @@
 			children = (
 				D2AE82891E8BD8BB00E7A443 /* ZHYRectModel.h */,
 				D2AE828A1E8BD8BB00E7A443 /* ZHYRectModel.m */,
+				D2AE828D1E8BDBBC00E7A443 /* ZHYPointModel.h */,
+				D2AE828E1E8BDBBC00E7A443 /* ZHYPointModel.m */,
 			);
 			name = SystemStruct;
 			sourceTree = "<group>";
@@ -465,6 +470,7 @@
 				D2AE828B1E8BD8BB00E7A443 /* ZHYRectModel.m in Sources */,
 				BA500E361E22A6A300086032 /* ZHYNotPairTestClass.m in Sources */,
 				BAF3E1181E18005E00B39E5D /* ZHYAdvancedTypeTestClass.m in Sources */,
+				D2AE828F1E8BDBBC00E7A443 /* ZHYPointModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

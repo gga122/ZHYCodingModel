@@ -1,5 +1,5 @@
 //
-//  ZHYRectModel.h
+//  ZHYPointModel.h
 //  ZHYCodingModel
 //
 //  Created by MickyZhu on 29/3/2017.
@@ -9,6 +9,6 @@
 #import "ZHYCodingModel.h"
 #import "ZHYStructConvertible.h"
 
-@interface ZHYRectModel : ZHYCodingModel <ZHYStructConvertible>
+@interface ZHYPointModel : ZHYCodingModel <ZHYStructConvertible>
 
 @end
