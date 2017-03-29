@@ -221,13 +221,14 @@ if (!object) {\
             id var;
             if (isObjectType(typeFlag)) {
                 var = object_getIvar(self, ivar);
-            } else if (supportWrapper(encodingType) || isAllowedSystemStructs(encodingType)) {
+            } else if (supportWrapper(encodingType)) {
                 void *ptrVar = pointerToIvar(ptrBase, ivar);
                 NSValue *valueWrapper = [NSValue value:ptrVar withObjCType:encodingType]; // Wrap with NSValue
                 
                 var = valueWrapper;
             } else {
                 NSAssert(NO, @"Invalid encode branch. <Type: %s>", encodingType);
+                
             }
     
             ENCODE_NIL_CHECK(var, cls);
@@ -243,28 +244,7 @@ if (!object) {\
                     encodeKey = [NSString stringWithFormat:@"%@%@", kZHYCodingModelReplacePrefix, encodeKey];
                 }
                 
-                if ([replaceVar isKindOfClass:[NSValue class]]) {
-                    NSValue *valueWrapper = replaceVar;
-                    if (isCGRectType(valueWrapper.objCType)) {
-                        CGRect rect = CGRectZero;
-                        [valueWrapper getValue:&rect];
-                        [aCoder encodeRect:rect forKey:encodeKey];
-                    } else if (isCGPointType(valueWrapper.objCType)) {
-                        CGPoint point = CGPointZero;
-                        [valueWrapper getValue:&point];
-                        [aCoder encodePoint:point forKey:encodeKey];
-                    } else if (isCGSizeType(valueWrapper.objCType)) {
-                        CGSize size = CGSizeZero;
-                        [valueWrapper getValue:&size];
-                        [aCoder encodeSize:size forKey:encodeKey];
-                    } else if (supportWrapper(valueWrapper.objCType)) {
-                        [aCoder encodeObject:replaceVar forKey:encodeKey];
-                    } else {
-                        NSLog(@"***** Warn ***** Invalid value type for encode. <replaceVar: %@>", replaceVar);
-                    }
-                } else {
-                    [aCoder encodeObject:replaceVar forKey:encodeKey];
-                }
+                [aCoder encodeObject:replaceVar forKey:encodeKey];
             } else {
                 NSLog(@"***** Warn ***** Invalid value for encode. <varName: %@><var: %@>", varName, var);
             }
