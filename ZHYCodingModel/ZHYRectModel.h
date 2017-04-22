@@ -9,6 +9,9 @@
 #import "ZHYCodingModel.h"
 #import "ZHYStructConvertible.h"
 
+/**
+ For support CGRect convertor
+ */
 @interface ZHYRectModel : ZHYCodingModel <ZHYStructConvertible>
 
 @end

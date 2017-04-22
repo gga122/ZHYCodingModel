@@ -9,6 +9,9 @@
 #import "ZHYCodingModel.h"
 #import "ZHYStructConvertible.h"
 
+/**
+ For support CGPoint Convertor
+ */
 @interface ZHYPointModel : ZHYCodingModel <ZHYStructConvertible>
 
 @end

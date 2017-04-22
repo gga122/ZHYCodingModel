@@ -9,6 +9,9 @@
 #import "ZHYCodingModel.h"
 #import "ZHYStructConvertible.h"
 
+/**
+ For support CGSize Convertor
+ */
 @interface ZHYSizeModel : ZHYCodingModel <ZHYStructConvertible>
 
 @end
