@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ZHYStructConvertible.h"
 
 #define ENCODING_MODEL_ENABLE_LOG           1
 
@@ -39,8 +40,17 @@
 
 @end
 
+@protocol ZHYStructCodingProtocol <NSObject>
 
-@interface ZHYCodingModel : NSObject <NSCoding, ZHYCodingProtocol>
+@optional
+
+- (id<ZHYStructConvertible>)convertStruct:(void *)structRef encodingType:(const char *)encodingType forKey:(NSString *)key inClass:(Class)cls;
+
+
+
+@end
+
+@interface ZHYCodingModel : NSObject <NSCoding, ZHYCodingProtocol, ZHYStructCodingProtocol>
 
 /**
  *  Mark the keys that you dont want to encode/decode. Key is your instance variable name in class. Like NSString *_string, key is '_string'.
@@ -90,5 +100,14 @@
  *
  */
 - (void)coderWillDecode:(NSCoder *)aDecoder;
+
+/**
+ You can return an related object for a given struct with its encoding type.
+ 
+ NOTICE:
+ 1. encode CGRect/CGPoint/CGSize will NOT invoke this method. 
+ */
+- (id<ZHYStructConvertible>)convertStruct:(void *)structRef encodingType:(const char *)encodingType forKey:(NSString *)key inClass:(Class)cls;
+
 
 @end

@@ -6,8 +6,13 @@
 //  Copyright © 2016年 John Henry. All rights reserved.
 //
 
-#import "ZHYCodingModel.h"
 #import <objc/objc-runtime.h>
+
+#import "ZHYCodingModel.h"
+
+#import "ZHYRectModel.h"
+#import "ZHYSizeModel.h"
+#import "ZHYPointModel.h"
 
 #define LOG_CONDITION(condition)                    (condition) && ENCODING_MODEL_ENABLE_LOG
 
@@ -92,6 +97,10 @@ NS_INLINE BOOL isAllowedEncodingIvar(const char *type) {
 
 NS_INLINE BOOL isObjectType(const char typeFlag) {
     return (typeFlag == _C_ID);
+}
+
+NS_INLINE BOOL isStructType(const char typeFlag) {
+    return (typeFlag == _C_STRUCT_B);
 }
 
 NS_INLINE BOOL supportWrapper(const char *type) {
@@ -221,6 +230,15 @@ if (!object) {\
             id var;
             if (isObjectType(typeFlag)) {
                 var = object_getIvar(self, ivar);
+            } else if (isStructType(typeFlag)) {
+                void *ptrVar = pointerToIvar(ptrBase, ivar);
+                id<ZHYStructConvertible> mStruct = [self systemStructWithEncodingType:encodingType structRef:ptrVar]; // Ask if struct is CGRect/CGSize/CGPoint
+                
+                if (!mStruct) {
+                    mStruct = [self convertStruct:ptrVar encodingType:encodingType forKey:varName inClass:cls];
+                }
+                
+                var = mStruct;
             } else if (supportWrapper(encodingType)) {
                 void *ptrVar = pointerToIvar(ptrBase, ivar);
                 NSValue *valueWrapper = [NSValue value:ptrVar withObjCType:encodingType]; // Wrap with NSValue
@@ -228,7 +246,6 @@ if (!object) {\
                 var = valueWrapper;
             } else {
                 NSAssert(NO, @"Invalid encode branch. <Type: %s>", encodingType);
-                
             }
     
             ENCODE_NIL_CHECK(var, cls);
@@ -329,6 +346,22 @@ if (!object) {\
     }
 }
 
+#pragma mark - Private Methods
+
+- (id<ZHYStructConvertible>)systemStructWithEncodingType:(const char *)encodingType structRef:(void *)ref {
+    NSAssert(ref, @"Struct pointer can not be NULL");
+    
+    if (isCGRectType(encodingType)) {
+        return [ZHYRectModel objectFromStruct:ref];
+    } else if (isCGSizeType(encodingType)) {
+        return [ZHYSizeModel objectFromStruct:ref];
+    } else if (isCGPointType(encodingType)) {
+        return [ZHYPointModel objectFromStruct:ref];
+    }
+    
+    return nil;
+}
+
 #pragma mark - ZHYCodingClassProtocol
 
 + (NSArray<NSString *> *)skipIvarKeys {
@@ -353,6 +386,12 @@ if (!object) {\
 
 - (id)willDecodeValue:(id<NSCoding>)value forKey:(NSString *)key inClass:(__unsafe_unretained Class)cls {
     return value;
+}
+
+#pragma mark - ZHYStructCodingProtocol
+
+- (id<ZHYStructConvertible>)convertStruct:(void *)structRef encodingType:(const char *)encodingType forKey:(NSString *)key inClass:(Class)cls {
+    return nil;
 }
 
 @end
