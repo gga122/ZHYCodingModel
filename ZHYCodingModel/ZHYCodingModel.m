@@ -322,6 +322,11 @@ if (!object) {\
                 
                 if (isObjectType(typeFlag)) {
                     object_setIvar(self, ivar, replaceVar);
+                } else if (isStructType(typeFlag)) {
+                    id<ZHYStructConvertible> mStruct = replaceVar;
+                    
+                    void *ivarPtr = pointerToIvar(ptrBase, ivar);
+                    [mStruct restoreToStruct:ivarPtr];
                 } else if (supportWrapper(encodingType)) {
                     if ([replaceVar isKindOfClass:[NSValue class]]) {
                         NSValue *wrapperValue = (NSValue *)replaceVar;
@@ -393,5 +398,7 @@ if (!object) {\
 - (id<ZHYStructConvertible>)convertStruct:(void *)structRef encodingType:(const char *)encodingType forKey:(NSString *)key inClass:(Class)cls {
     return nil;
 }
+
+
 
 @end

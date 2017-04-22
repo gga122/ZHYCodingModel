@@ -40,17 +40,15 @@
 
 @end
 
-@protocol ZHYStructCodingProtocol <NSObject>
+@protocol ZHYStructConvertor <NSObject>
 
 @optional
 
 - (id<ZHYStructConvertible>)convertStruct:(void *)structRef encodingType:(const char *)encodingType forKey:(NSString *)key inClass:(Class)cls;
 
-
-
 @end
 
-@interface ZHYCodingModel : NSObject <NSCoding, ZHYCodingProtocol, ZHYStructCodingProtocol>
+@interface ZHYCodingModel : NSObject <NSCoding, ZHYCodingProtocol, ZHYStructConvertor>
 
 /**
  *  Mark the keys that you dont want to encode/decode. Key is your instance variable name in class. Like NSString *_string, key is '_string'.
