@@ -109,7 +109,7 @@
     XCTAssertNotEqual(archiverObject.ptrValue, unarchiverObject.ptrValue);
     XCTAssertEqual(unarchiverObject.cStringValue, NULL);
     XCTAssertFalse([archiverObject isCArrayEqualTo:unarchiverObject]);
-    XCTAssertFalse(NSEqualRects(archiverObject.rectValue, unarchiverObject.rectValue));
+    XCTAssertTrue(NSEqualRects(archiverObject.rectValue, unarchiverObject.rectValue));
     
     union unionType aValue = archiverObject.unionValue;
     union unionType bValue = unarchiverObject.unionValue;
@@ -153,7 +153,7 @@
     ZHYSystemStructTestClass *unarchiverObject = [self unarchiveObjectWithFileName:ksSystemStructObjectFileName];
     XCTAssertNotNil(unarchiverObject);
     
-    XCTAssertNotEqualObjects(archiverObject, unarchiverObject);
+    XCTAssertEqualObjects(archiverObject, unarchiverObject);
 }
 
 @end
