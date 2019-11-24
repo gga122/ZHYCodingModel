@@ -29,17 +29,17 @@ NS_INLINE NSString *NSStringFromIvarName(Ivar ivar) {
 
 NS_INLINE BOOL isCGRectType(const char *type) {
     static const char *kCGRectType = "{CGRect=\"origin\"{CGPoint=\"x\"d\"y\"d}\"size\"{CGSize=\"width\"d\"height\"d}}";
-    return (strcmp(type, kCGRectType) != 0);
+    return (strcmp(type, kCGRectType) == 0);
 }
 
 NS_INLINE BOOL isCGPointType(const char *type) {
     static const char *kCGPointType = "{CGPoint=\"x\"d\"y\"d}";
-    return (strcmp(type, kCGPointType) != 0);
+    return (strcmp(type, kCGPointType) == 0);
 }
 
 NS_INLINE BOOL isCGSizeType(const char *type) {
     static const char *kCGSizeType = "{CGSize=\"width\"d\"height\"d}";
-    return (strcmp(type, kCGSizeType) != 0);
+    return (strcmp(type, kCGSizeType) == 0);
 }
 
 NS_INLINE BOOL isAllowedSystemStructs(const char *type) {
